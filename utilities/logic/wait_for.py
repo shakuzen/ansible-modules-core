@@ -230,7 +230,7 @@ class LinuxTCPConnectionInfo(TCPConnectionInfo):
         if self.module.params['exclude_hosts'] is None:
             return []
         exclude_hosts = self.module.params['exclude_hosts']
-        return [ _convert_host_to_hex(h) for h in exclude_hosts ]
+        return [ _convert_host_to_hex(h)[1] for h in exclude_hosts ]
 
     def get_active_connections_count(self):
         active_connections = 0
